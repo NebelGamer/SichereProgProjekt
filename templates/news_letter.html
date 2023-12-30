@@ -10,33 +10,37 @@
     <h1>Top Stories</h1>
         <div class="top-stories-1">
             <div class="photo-top-1">
+                <img alt="Top Story" src="{{ top_stories[0][0] }}">
             </div>
         <div>
-              {{ top_stories[0] | safe}}
+              {{ top_stories[0][1] | safe}}
         </div>
         </div>
 
         <div class="top-stories-2">
             <div class="photo-top-2">
+                <img alt="Top Story" src="{{ top_stories[1][0] }}">
             </div>
         <div>
-            <p>  {{ top_stories[1] | safe}} </p>
+            <p>  {{ top_stories[1][1] | safe}} </p>
         </div>
         </div>
 
         <div class="top-stories-3">
             <div class="photo-top-3">
+                <img alt="Top Story" src="{{ top_stories[2][0] }}">
             </div>
         <div>
-            <p>  {{ top_stories[2] | safe}} </p>
+            <p>  {{ top_stories[2][1] | safe}} </p>
         </div>
         </div>
 
         <div class="top-stories-4">
             <div class="photo-top-4">
+                <img alt="Top Story" src="{{ top_stories[3][0] }}">
             </div>
         <div>
-            <p>  {{ top_stories[3] | safe}} </p>
+            <p>  {{ top_stories[3][1] | safe}} </p>
         </div>
         </div>
 
