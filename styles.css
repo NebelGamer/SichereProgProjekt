@@ -1,45 +1,58 @@
-/* static/styles.css */
+.box {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  max-width: 100%;
+}
+
+h1{
+  font-size: ;
+
+}
+
+
+.title {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
-.container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
+
 .data-table th, .data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .data-table th {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .data-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .data-table tr:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
