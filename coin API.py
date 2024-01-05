@@ -33,6 +33,7 @@ def index():
 
         html_table = normalized_data.to_html()
 
+        # Vulnerability: Renders HTML without proper sanitization, making it susceptible to XSS attacks(HTML injection)
         return render_template('index.html', table=html_table)
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         return f"Error: {e}"
@@ -42,7 +43,7 @@ def search():
     if request.method == 'POST':
         search_query = request.form.get('query')
 
-        # no input validation (vulnerable to injection attacks)
+        # Accepts user input without validation, exposing it to injection attacks
         url = f'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?symbol={search_query}'
         parameters = {
             'convert': 'USD'
@@ -61,14 +62,15 @@ def search():
 
             # Handle the retrieved data accordingly (omitted for brevity)
 
+            # Vulnerability: Rendering data directly without proper validation
             return render_template('search_result.html', result=data)
         except (ConnectionError, Timeout, TooManyRedirects) as e:
             return f"Error: {e}"
 
-@app.errorhandler(500)
-def server_error(e):
-    return render_template('error.html'), 500
+#@app.errorhandler(500)
+#def server_error(e):
+#   return render_template('error.html'), 500
 
+# Vulnerability: Lacks proper error handling, potentially exposing sensitive information in error messages.
 if __name__ == '__main__':
     app.run(debug=True)
-
