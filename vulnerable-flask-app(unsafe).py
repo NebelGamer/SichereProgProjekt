@@ -1,4 +1,4 @@
-from flask import Flask,jsonify,render_template_string,request,Response,render_template
+from flask import Flask,jsonify,render_template_string, send_from_directory, request,Response,render_template
 import subprocess
 from werkzeug.datastructures import Headers
 from werkzeug.utils import secure_filename
@@ -12,6 +12,10 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 @app.route("/")     
 def main_page():
     return render_template ("index.html")
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -107,3 +111,5 @@ connection = {}
 max_con = 50
 
     
+#für mich unwichtig
+
